@@ -1,0 +1,34 @@
+server:
+  port: 8080
+  tomcat:
+    accesslog:
+      enabled: false
+    basedir: .
+  #  ssl:
+  #    key-store: "classpath:keystore.jks"
+  #    key-store-password: changeit
+  #    enabled: true
+  http:
+    port: 8080
+
+spring:
+  application:
+    name:  weather-report
+  profiles:
+    active: local
+  output:
+    ansi:
+      enabled: ALWAYS
+
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: '*'
+
+properties:
+  adapter-ws-properties:
+    rootUri: http://localhost:8088/
+    connectTimeout: 500000
+    readTimeout: 500000
